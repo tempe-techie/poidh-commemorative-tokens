@@ -28,11 +28,11 @@ async function main() {
   );
   await instance.deployed();
 
-  console.log("Contract deployed to:", instance.address); 
+  console.log(`!!! The NFT address (save it somewhere):`, instance.address); 
 
   try {
     console.log("Wait a bit before starting the verification process...");
-    sleep(2000);
+    sleep(4000);
     await hre.run("verify:verify", {
       address: instance.address,
       constructorArguments: [
@@ -43,6 +43,8 @@ async function main() {
         nftImage
       ]
     });
+    
+    console.log(`!!! The NFT address (save it somewhere):`, instance.address); 
   } catch (error) {
     console.error(error);
     console.log("If automated verification did not succeed, try to verify the smart contract manually by running this command:");
