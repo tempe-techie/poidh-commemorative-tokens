@@ -19,8 +19,10 @@ Open VS Code or Cursor and then open the terminal. There are many ways to open a
 After you opened the terminal, run the following command to check if Node.js is installed:
 
 ```bash
-node -v # should print the version of Node.js
+node -v
 ```
+
+If you see a version number, you have Node.js installed. If you see an error, you don't have Node.js installed.
 
 If you don't have Node.js installed, go here and install the v18.x version for your OS: https://nodejs.org/en/download/prebuilt-installer
 
