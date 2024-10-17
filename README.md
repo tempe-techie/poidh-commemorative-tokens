@@ -1,43 +1,48 @@
-# Smart contracts boilerplate for the Degen L3 chain
+# POIDH commemorative tokens
 
-This repository can serve as a starting point for your project. 
-
-Or if you already have a repository, you can implement some parts of it, e.g. the contract verification scripts or tests.
+This is a project through which you can launch commemorative tokens (ERC-721 or ERC-20) and then mint them to users who opened a claim for a given bounty ID.
 
 ## Quickstart
 
-### Install dependencies
+### Step 1: Install VS Code or Cursor
+
+Get VS Code here: https://code.visualstudio.com/
+
+Or Cursor here: https://cursor.sh/
+
+### Step 2: Install Node.js
+
+Open VS Code or Cursor and then open the terminal. There are many ways to open a terminal in VS Code, for example:
+- In the menu bar find `Terminal` > `New Terminal`
+- Or watch this video: https://www.youtube.com/watch?v=eZAT6fwMVgY
+
+After you opened the terminal, run the following command to check if Node.js is installed:
+
+```bash
+node -v # should print the version of Node.js
+```
+
+If you don't have Node.js installed, go here and install the v18.x version for your OS: https://nodejs.org/en/download/prebuilt-installer
+
+### Step 3: Install dependencies
 
 ```bash
 npm i
 ```
 
-### Create .env file
+### Step 4: Create .env file
 
-Copy `.env.example` and create a `.env` file. Then enter your deployer private key in it (use a key that you use only for deployments and holds only very small amount of funds).
+Create a new account/address in your wallet (e.g. MetaMask or Rabby). This will be your deployer address which you will use in the scripts of this project. Send a small amount of DEGEN to this address to be able to deploy contracts.
+
+Copy `.env.example` and create a `.env` file. Then enter the private key of your deployer address in it.
 
 **Important:** The `.env` file is listed in `.gitignore` and it should never be added to the git repository (even if it's private on GitHub).
 
-### Tests
+### Step 5: Scripts
 
-There's an example test that you can run in the `test` folder.
+Scripts is the most important folder. In this folder you'll find:
 
-Writing tests is a crucial part of smart contract development. Don't skip it.
+- A script to deploy a commemorative token (ERC-721 or ERC-20)
+- A script to mint commemorative tokens to users who opened a claim for a given bounty ID
 
-### Deployment & Verification on the block explorer
-
-In the `scripts` folder you can find an example of a deployment script. Deployment part is the same in both subfolders, the only difference is in how smart contracts are **verified** on the [block explorer](https://explorer.degen.tips/).
-
-#### Deployment with automatic verification (`deploy-1` folder)
-
-The script [exampleAutoVerification.deploy.js`](scripts/deploy-1/exampleAutoVerification.deploy.js) will automatically deploy and verify your smart contract.
-
-Note that verification could fail if the lag between the contract deployment and when block explorer finds and stores its bytecode is too big. In that case the bash command for manual verification should print out in the terminal.
-
-#### Deployment with manual verification (`deploy-2` folder)
-
-In case you'd like to avoid potential errors with automatic verifications, you can opt-in for using manual verifications at all times, as set up in the [exampleManualVerification.deploy.js](scripts/deploy-2/exampleManualVerification.deploy.js) script.
-
-#### Verification of an existing smart contract (`verify-existing` folder)
-
-If you already have a deployed smart contract that has not been verified yet, you can use the [verification.js](scripts/verify-existing/verification.js) script along the parameters set in arguments.js.
+Each script has instructions how to run it in the first lines of the code.

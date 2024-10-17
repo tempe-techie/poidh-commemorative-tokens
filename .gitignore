@@ -4,6 +4,10 @@ venv
 .openzeppelin
 *.svg
 
+# dotenv environment variables file
+.env
+.env.test
+
 #Hardhat files
 cache
 artifacts
@@ -77,10 +81,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
