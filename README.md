@@ -24,13 +24,29 @@ node -v # should print the version of Node.js
 
 If you don't have Node.js installed, go here and install the v18.x version for your OS: https://nodejs.org/en/download/prebuilt-installer
 
-### Step 3: Install dependencies
+### Step 3: Install GitHub Desktop
+
+If you don't have Git on your computer yet, install GitHub Desktop: https://desktop.github.com/
+
+### Step 4: Download repository code to your computer
+
+Go to https://github.com/tempe-techie/poidh-commemorative-tokens
+
+Click the green **Code** button and then click **Open with GitHub Desktop**.
+
+### Step 5: Install dependencies
+
+Open VS Code or Cursor. The click on **File** > **Open Folder** (in the menu bar) and then select the folder named `poidh-commemorative-tokens`.
+
+After you opened the folder, open the terminal in VS Code/Cursor (the same as in Step 2) and run the following command:
 
 ```bash
 npm i
 ```
 
-### Step 4: Create .env file
+This command will install all the dependencies of the project.
+
+### Step 6: Create .env file
 
 Create a new account/address in your wallet (e.g. MetaMask or Rabby). This will be your deployer address which you will use in the scripts of this project. Send a small amount of DEGEN to this address to be able to deploy contracts.
 
@@ -38,7 +54,7 @@ Copy `.env.example` and create a `.env` file. Then enter the private key of your
 
 **Important:** The `.env` file is listed in `.gitignore` and it should never be added to the git repository (even if it's private on GitHub).
 
-### Step 5: Scripts
+### Step 7: Scripts
 
 Scripts is the most important folder. In this folder you'll find:
 
